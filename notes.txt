@@ -1,0 +1,195 @@
+Laravel file create panna: composer create-project laravel/laravel crud-app 
+
+File kulla pova: cd crud-app 
+
+Website URL Create Panna: php artisan serve 
+
+Controller Create Panna: php artisan make:controller ProductController 
+
+Resource - Kulla views kulla than HTML Template podanum
+
+---------X--------X---------X---------------X------------X-----------
+
+Step 1 : Browser la page ah load panna 1St controller la function eluthanum.
+Step 2 : routes la web.php file la enga irudhu file eduthu kaatanumnu eluthanum.
+
+DataBase
+--------
+.env file la database name lam type pannitu xampp on pannitu, apram kila irukura step lam follow pannanum.
+
+php artisan make:model Product -m
+
+Step 1 : Mela ulla cmd use panna aparam model la oru file create avum (product.php) then automatic ah
+         Database file kulla irukura "Migrations" la oru file create avum. Andha file la than database ku vendiya table
+         ah create panna porom.   
+
+Step 2 : php artisan migrate:fresh - indha cmd ah podanum next xampp la check panni pakkanum.   
+         (Data Base table creation kaga) table create agirukum.
+         
+    Hints
+--------------
+
+Routes - url set pannavum enga irundhu page load avanumnu solrathu.
+controller - ithu view la endha edathula code file irukunu solrathu.
+
+
+Form - Form la irundhu data pass panromna kandipa  @csrf indha itha form kulla
+       podanum.
+
+@yield('main') -> @extends('layouts.app')
+@section('main') ---- @endsection 
+------------------------------------------------------------------------------------
+Above all are points is basic things. below points are step by step project creation step.
+                            
+40mins - Step 1 :  firstu php artisan make:controller ProductController - itha type pannanum.
+indha file app -> Http -> controller -> ProductController create avum.
+
+Step 2 : View la than ella front view um create pannanum. (app.blade.php) indha page than
+master page. ithu kulla than header irukum. 
+
+Step 3 : @yield('main') - ithu than ella page kum header ah kondu vara pothu. itha oru row la 
+pottutu vera endha page la header lam varanumo anga @extends('layouts.app') nu potta pothum
+header apply aidum. *ithula irukura (layout.app) file path. @section('mail') ---- @endsection ithukulla namma
+eluthura ella code um master page la irukura header ku kela vandhurum.
+
+Step 4 : index page load pannanumna first namma controller la oru function eluthanum.
+              public function index(){
+                     return view ('products/index')
+              }
+Next Routes create pannanum.(web.php). indha file la (Route::get("/", [ProductController::class,'index']);) podanum.
+get method la "/" nu irundha ProductController la irukura index function run avanum. 
+php artisan serve -> above all done then run server. this is the first procedure.
+
+-------------------x-x-x-x-x------------------x-x-x-x-x---------------x-x-x-x-x-----------------
+DATA BASE Conntection
+
+Step 1 : .env file la database conntection pannanum.
+step 2 : Next model la oru file create pannnanum. php artisan make:model product -m
+Step 3 : Migration file open panni, database table creation pannanum.
+Step 4 : php artisan migrate:fresh ipa data base la table create airukum.
+
+-------------------x-x-x-x-x------------------x-x-x-x-x---------------x-x-x-x-x-----------------
+
+Database conntection mudinjathum create page la kudukura product details lam database la save
+panni store page la show panna vaikanum.
+
+@csrf - ithu safty propose kaga kandipa podanum.
+
+Create page la irukura form la image olunga database la store ava = form element la 
+enctype="multipart/form-data" nu podanum.
+
+*Form validation lam ProductController la than podanum.
+
+athu enna error nu users ku show panna direct ah form la bootstrap la code podanum.
+
+-------------------x-x-x-x-x------------------x-x-x-x-x---------------x-x-x-x-x-----------------
+
+validations lam mudinjathum image files ah oru folder la store pannanum. 
+public->products(image folder name)->images...
+
+indha path la than images save avanumnu ProductController condition eluthanum. line-33
+
+Hints: public file la than css file um store pannanum.
+       Link panna-> href la asset kulla file path ah pass pannanum. Line-8
+-------------------x-x-x-x-x------------------x-x-x-x-x---------------x-x-x-x-x-----------------
+
+form data va database la irukuru table ku assign panna, model la namma create panna *Product
+file valiya than database la store pannanum. line-36
+
+-------------------x-x-x-x-x------------------x-x-x-x-x---------------x-x-x-x-x-----------------
+
+Form data success ah store aitunu, users ku show panna alert message create pannanum.
+ProductController laiye success variable create panni next app.blade page la oru if condition podanum.
+*ProductController line-45
+*app.blade line-22
+
+-------------------x-x-x-x-x------------------x-x-x-x-x---------------x-x-x-x-x-----------------
+
+MAIN CHAPTER
+ Epdi store panna data va front la show panrathu.
+
+lastest product first show avanum. ProductController-> line-12
+
+$products nu oru object la Model la irukura Product ah select pannanum. $products=Product::get(); line-12
+select pannatha view ku pass pannanum-> return view('products.index', ['products' => $products]);
+indha mari.
+
+$products ah vachi data va eduthukalam. 
+index.blade page la @foreach vachi data va show panna porom. line-21
+
+-------------------x-x-x-x-x------------------x-x-x-x-x---------------x-x-x-x-x-----------------
+
+Product Edit & Delect
+
+Show ku oru route create pannanum. namme id use panranala route laium id use pannanum. Line-12
+
+Next Index page irukura product name la href ku andha product oda id ah pass pannanum. line-29
+apa than page url la id + show page link ukkarum.
+
+Next: ProductController la condition podanum. Line-48
+      particular id la irukura product theva so $product=Product::where('id',$id)->first(); podanum.
+      Product Modeles muliyama id ah ulla pass pannanum where vaiya data varum athula first record mattum than edukanum.
+
+Show template create panni anga data va kaatanum. Line-17
+
+-------------------x-x-x-x-x------------------x-x-x-x-x---------------x-x-x-x-x-----------------
+
+Edit page
+       First route create pannikanum. Line-14
+       Controller um create pannitu next,
+       Edit.blade create pannitu, Creat page la irukura ella code aium copy panni paste pannidanum.
+       form la value la already irukura old kuda andha andha name ah add pannikanum. Line-20
+
+       Next: edit page la form element kulla action update nu mathanum,+ keela @method('PUT') nu podanum. Line-15
+
+       Update ku oru route create pannanum PUT method la. Line-16
+       then controller la function create pannanum. Line-60
+
+-------------------x-x-x-x-x------------------x-x-x-x-x---------------x-x-x-x-x-----------------
+
+Delete function
+       route create pannanum. Line-18
+       Controller Create pannanum. Line-89
+       index page la delete button la onclick event la code eluthanum. Line-34
+
+-------------------x-x-x-x-x------------------x-x-x-x-x---------------x-x-x-x-x-----------------
+
+Pagination
+       Providers->AppServicesProvider kulla first use nu oru code podanum. Line-6
+       Next the file la function boot onnu irukum athu kulla boostrap code vachi pagination create pannanum. Line-21
+
+       Controller la lastest nu podanum. Line-12
+       Next Index page la table keela {{$products->links()}} nu podanum. line-41
+
+       pagenation la next next page porapa S.no again 1 la irundhu start avuthu. so index page la php code podanum.
+       line-23
+
+       ----------------------------------------END----------------------------------------------
+
+New Begining
+
+Get : Get method la normala request anupi page ah load panna vaikirathu.
+Post : For example form la submit panni data anupurapa next endha page ponumnu solrathu post method.
+
+
+git global --config user.name "git user name"
+git global --config user.email "git user email"
+git init
+git clone repository url
+git add "the new file name HERE"
+git status
+git commit -m "index.html file added"
+git push orgin main
+git pull
+git checkout 
+git remote add origin repostiry url
+git merge *branch name
+
+
+Laravel Setup Basic Commands
+-------------------------------------
+.env
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan serve

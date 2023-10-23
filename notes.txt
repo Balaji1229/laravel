@@ -172,6 +172,16 @@ Get : Get method la normala request anupi page ah load panna vaikirathu.
 Post : For example form la submit panni data anupurapa next endha page ponumnu solrathu post method.
 
 
+Git 1St steps :
+---------------
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Balaji1229/laravel.git
+git push -u origin main
+---------------
+
 git global --config user.name "git user name"
 git global --config user.email "git user email"
 git init

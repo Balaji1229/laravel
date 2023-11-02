@@ -203,3 +203,7 @@ php artisan key:generate
 php artisan migrate
 php artisan db:seed
 php artisan serve
+
+https://www.youtube.com/watch?v=N_Qdqj0z4J4
+
+JVL - https://www.youtube.com/watch?v=tWPvcYR3PMM 28:31

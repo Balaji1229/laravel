@@ -39,17 +39,6 @@
     {{$contacts->links()}}
 
 
-
-<!-- <form action="" method="get">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" name="search" placeholder="Search...">
-        <div class="input-group-append">
-            <button class="btn btn-primary" type="submit">Search</button>
-        </div>
-    </div>
-</form> -->
-
-
 </div>
 
 

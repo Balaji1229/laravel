@@ -41,11 +41,11 @@ Route::get("/about", [ProductController::class, 'about_page']);
 
 //Authentication Controller Paths 
 
-Route::get("/register", [AuthController::class, 'register_page'])->middleware('guest'); //middle ware redirect url change panna app > Provider > RouteServiceProvider
+Route::get("/register", [AuthController::class, 'register_page'])->middleware('guest')->name('register'); //middle ware redirect url change panna app > Provider > RouteServiceProvider. Site open ana odane register page load aga Middleware > Authenticate.php file la mathanum.
 
 Route::post("/registerpost",[AuthController::class,'registerpost_page']);
 
-Route::get("/login",[AuthController::class,'login_page'])->middleware('guest')->name('login');
+Route::get("/login",[AuthController::class,'login_page'])->middleware('guest');
 
 Route::post("/loginpost",[AuthController::class,'loginpost_page']);
 

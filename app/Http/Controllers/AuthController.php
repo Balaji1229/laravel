@@ -31,7 +31,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect('/about');
+        return redirect('/');
     }
 
     public function login_page(){
@@ -49,7 +49,7 @@ class AuthController extends Controller
         if(Auth::attempt($credentials)){
             $user = User::where('email', $credentials['email'])->first();
             Auth::login($user);
-            return redirect('/about');
+            return redirect('/');
         } else {
             return back()->withErrors(['Invalid Credentials!!']);
         }

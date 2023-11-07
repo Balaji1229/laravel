@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ Route::put("products/{id}/update", [ProductController::class, 'update_page']);
 
 Route::get("products/{id}/delete", [ProductController::class, 'delete_page']);
 
-Route::get("/", [ProductController::class, 'home_page'])->middleware('auth');
+Route::get("/", [ProductController::class, 'home_page']);
 
 Route::post("/contact", [ProductController::class, 'contact_page']);
 
@@ -50,3 +50,8 @@ Route::get("/login",[AuthController::class,'login_page'])->middleware('guest');
 Route::post("/loginpost",[AuthController::class,'loginpost_page']);
 
 Route::get("/logout",[AuthController::class,'logout_page']);
+
+
+//Admin DASHBOARD Controllers
+
+Route::get("/admin",[AdminController::class,'admin_page'])->middleware('auth');

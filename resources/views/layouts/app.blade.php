@@ -29,12 +29,6 @@
 </head>
 
   <body>
-    <!-- Navigation Menu -->
-<!-- <nav class="navbar navbar-expand bg-black">
-    <div class="container-fluid">
-        <a href="/" class="navbar-brand text-light">Laravel CRUD</a>
-    </div>
-</nav> -->
 
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
@@ -48,7 +42,7 @@
         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-        <a class="text-light" href="/logout"> Logout</a>
+        <a class="text-light" href="/admin"> Admin</a>
       </div>
      
     </div>

@@ -182,8 +182,10 @@ git remote add origin https://github.com/Balaji1229/laravel.git
 git push -u origin main
 ---------------
 
-git global --config user.name "git user name"
-git global --config user.email "git user email"
+
+git config --global user.email "git user mail"
+git config --global user.name "git user name"
+
 git init
 git clone repository url
 git add "the new file name HERE"
@@ -204,6 +206,16 @@ php artisan migrate
 php artisan db:seed
 php artisan serve
 
-https://www.youtube.com/watch?v=N_Qdqj0z4J4
 
-JVL - https://www.youtube.com/watch?v=tWPvcYR3PMM 28:31
+Laravel API creation - https://www.youtube.com/watch?v=tq7ma4tNWIo
+---------------------
+php artisan make:resource User // app > Http > Resources > User
+
+php artisan make:resource UserCollections // app > Http > Resources > User
+
+php artisan make:controller Apicontroller
+
+
+Api Works : As always First Route set pannanum Next Controller la data get panna code eluthanum.
+For Example : Controller ku Models and Api File patha theva. Modeles la irundhu than data va eduthu API resource file
+valiya Json formate ku maathi Output ah kaatrom.

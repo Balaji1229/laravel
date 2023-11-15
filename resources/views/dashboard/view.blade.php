@@ -1,8 +1,9 @@
-@extends('layouts.app')
-@section('main')
-<div class="d-flex justify-content-between">
+@extends('layouts.dashboard')
+@section('dashboardlayout')
+
+<div class="d-flex justify-content-between p-5">
             <h5><i class="bi bi-basket-fill"></i> Product Details</h5>
-            <!-- <a href="products/create" class="btn btn-primary"><i class="bi bi-plus-circle-dotted"></i> New Products</a> -->
+            <a href="products/create" class="btn btn-primary"><i class="bi bi-plus-circle-dotted"></i> New Products</a>
         </div>
         <div class="col-md-12 table-responsive mt-3">
             <table class="table table-bordered">
@@ -12,7 +13,7 @@
                     <th>Product Name</th>
                     <th>M.R.P</th>
                     <th>Selling Price</th>
-                    <!-- <th>Action</th> -->
+                    <th>Action</th>
 
                 </tr>
                 <tbody>
@@ -26,10 +27,10 @@
                         <td><a href="products/{{$demo->id}}/show">{{$demo->name}}</a></td>
                         <td>Rs. {{$demo->mrp}}</td>
                         <td>Rs. {{$demo->price}}</td>
-                        <!-- <td>
+                        <td>
                             <a href="products/{{$demo->id}}/edit" class="btn btn-dark btn-sm"> <i class="bi bi-pencil-square"></i></a>
                              <a href="products/{{$demo->id}}/delete" onclick="return confirm('Are you sure')" class="btn btn-danger btn-sm"> <i class="bi bi-trash"></i></a>
-                        </td> -->
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

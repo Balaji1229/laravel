@@ -39,6 +39,8 @@ Route::post("/contact", [ProductController::class, 'contact_page']);
 
 Route::get("/about", [ProductController::class, 'about_page']);
 
+Route::get("/view", [ProductController::class, 'view_page']);
+
 //Authentication Controller Paths 
 
 Route::get("/register", [AuthController::class, 'register_page'])->middleware('guest')->name('register'); //middle ware redirect url change panna app > Provider > RouteServiceProvider. Site open ana odane register page load aga Middleware > Authenticate.php file la mathanum.

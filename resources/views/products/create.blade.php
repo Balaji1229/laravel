@@ -1,5 +1,16 @@
-@extends('layouts.app')
-@section('main')
+@extends('layouts.dashboard')
+@section('dashboardlayout')
+<div class="container mt-5">
+   <div class="row">
+ 
+
+    @if($message=Session::get('success')) <!--Session enbathu oru helper, atha use panni temparary data store panni katalam, e.g.form sumbited suffully-->
+      <div class="alert alert-success alert-dismissible fade show"> <strong>Success</strong>{{$message}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    @endif
+
+  
 <h5><i class="bi bi-pencil-square"></i> Add New Products</h5>
 <hr/>
 <nav class="my-3">
@@ -76,5 +87,5 @@
 
     </form>
 </div>
-
+</div></div>
 @endsection 

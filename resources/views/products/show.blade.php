@@ -20,5 +20,6 @@
                     <p class="card-text fw-semibold">Selling Price <small class="text-success">Rs. {{$product->price}}</small></p>
                 </div>
             </div>
+            
 
 @endsection

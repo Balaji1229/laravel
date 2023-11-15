@@ -4,15 +4,15 @@
     font-family: "Poppins",sans-serif;
 }
 .card {
-    max-width: 50em;
-    flex-direction: row;
-    border: 1px solid #cccccc;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    max-width: 50em !important;
+    flex-direction: row !important;
+    border: 1px solid #cccccc !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
 }
 
 .card img{
-    max-width: 50%;
-    margin: auto;
-    padding: 0.5em;
-    border-radius: 0.7em;
+    max-width: 50% !important;
+    margin: auto !important;
+    padding: 0.5em !important;
+    border-radius: 0.7em !important;
 }

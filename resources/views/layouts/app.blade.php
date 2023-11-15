@@ -62,7 +62,7 @@
           <li><a class="nav-link scrollto {{ Request::is('about') ? 'active' : '' }}" href="/about">About</a></li>
           <li><a class="nav-link scrollto {{ Request::is('services') ? 'active' : '' }}" href="#services">Services</a></li>
           <li><a class="nav-link scrollto {{ Request::is('portfolio') ? 'active' : '' }}"" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto {{ Request::is('team') ? 'active' : '' }}"" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto {{ Request::is('team') ? 'active' : '' }}"" href="/shop">Shop</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -92,7 +92,7 @@
 
 
 
-<div class="container mt-5">
+<div class="container my-5">
    <div class="row">
  
 

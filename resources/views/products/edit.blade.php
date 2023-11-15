@@ -1,5 +1,8 @@
-@extends('layouts.app')
-@section('main')
+@extends('layouts.dashboard')
+@section('dashboardlayout')
+
+<div class="container p-5">
+   <div class="row">
 <h5><i class="bi bi-pencil-square"></i> Edit Products</h5>
 <hr/>
 <nav class="my-3">
@@ -76,6 +79,6 @@
 
 
     </form>
-</div>
+</div></div></div>
 
 @endsection 

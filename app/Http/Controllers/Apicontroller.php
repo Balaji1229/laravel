@@ -10,6 +10,10 @@ use App\Http\Resources\UserCollections as CollectionsUsers; // API File Mame
 
 use App\Models\User; // This is Database Table (Models)
 
+use App\Models\contact;
+
+use App\Http\Resources\ApiCreation;
+
 
 
 
@@ -25,6 +29,11 @@ class Apicontroller extends Controller
     $users = User::all();
     return new CollectionsUsers($users);
      
+   }
+
+   public function api_page(){
+      $api = contact::all();
+      return new ApiCreation ($api);
    }
 
 }

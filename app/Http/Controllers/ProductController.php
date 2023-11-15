@@ -116,5 +116,9 @@ $request->validate([
         return view('home.about', ['contacts' => $contacts]);
     }
 
+    public function view_page(){
+        $products = Product::latest()->paginate(5);
+        return view('dashboard.view',['products'=>$products]);
+    }
 
 }

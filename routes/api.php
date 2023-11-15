@@ -22,3 +22,4 @@ Route::get("/user/{id}",[ApiController::class,'user_page']);
 
 Route::get("/users",[ApiController::class,'users_page']);
 
+Route::get("/apicreation",[ApiController::class,'api_page']);
